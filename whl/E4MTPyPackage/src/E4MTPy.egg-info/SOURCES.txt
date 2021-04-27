@@ -1,6 +1,0 @@
-setup.py
-src/E4MTPY/__init__.py
-src/E4MTPy.egg-info/PKG-INFO
-src/E4MTPy.egg-info/SOURCES.txt
-src/E4MTPy.egg-info/dependency_links.txt
-src/E4MTPy.egg-info/top_level.txt
