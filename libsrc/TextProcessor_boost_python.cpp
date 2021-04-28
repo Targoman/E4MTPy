@@ -19,6 +19,7 @@
  *                                                                            *
  ******************************************************************************/
 /**
+ * @author Zakieh Shakeri <z.shakeri@targoman.com>
  * @author Behrooz Vedadian <vedadian@targoman.com>
  */
 
@@ -41,11 +42,11 @@ std::string c_ixml2Text(
 std::string c_text2IXML(
                 const std::string _source,
                 const std::string _language,
-                bool _noSpellCorrector=true);
+                bool _useSpellCorrector=true);
 std::string c_tokenize(
                 const std::string _source,
                 const std::string _language,
-                bool _noSpellCorrector=true,
+                bool _useSpellCorrector=true,
                 bool _hinidiDigits=true,
                 bool _arabicPunctuations=true,
                 bool _breakSentences=false);
@@ -63,7 +64,7 @@ BOOST_PYTHON_MODULE(libe4mtpy)
     def("tokenize", &c_tokenize, c_tokenize_overloads(
                                             (arg("_source"), 
                                             arg("_language"),
-                                            arg("_noSpellCorrector")=true,
+                                            arg("_useSpellCorrector")=true,
                                             arg("_hinidiDigits")=true,
                                             arg("_arabicPunctuations")=true,
                                             arg("_breakSentences")=false
@@ -71,7 +72,7 @@ BOOST_PYTHON_MODULE(libe4mtpy)
     def("text2IXML", &c_text2IXML, c_text2IXML_overloads(
                                             (arg("_source"), 
                                             arg("_language"),
-                                            arg("_noSpellCorrector")=true
+                                            arg("_useSpellCorrector")=true
                                             )));
     def("ixml2Text", &c_ixml2Text, c_ixml2Text_overloads(
                                             (arg("_source"), 
@@ -129,7 +130,7 @@ std::string c_ixml2Text(const std::string _source,
     return Result.toStdString();
 }
 
-std::string c_text2IXML(const std::string _source, const std::string _language, bool _noSpellCorrector) {
+std::string c_text2IXML(const std::string _source, const std::string _language, bool _useSpellCorrector) {
     QString Source = QString::fromUtf8(_source.data());
     QString Language = QString::fromUtf8(_language.data());
     bool SpellCorrected = false;
@@ -139,7 +140,7 @@ std::string c_text2IXML(const std::string _source, const std::string _language, 
         Language,
         0,
         false,
-        _noSpellCorrector,
+        _useSpellCorrector,
         QList<enuTextTags::Type>(),
         QList<stuIXMLReplacement>()
         );
@@ -148,7 +149,7 @@ std::string c_text2IXML(const std::string _source, const std::string _language, 
 
 std::string c_tokenize(const std::string _source,
                 const std::string _language,
-                bool _noSpellCorrector,
+                bool _useSpellCorrector,
                 bool _hinidiDigits,
                 bool _arabicPunctuations,
                 bool _breakSentences) {
@@ -162,7 +163,7 @@ std::string c_tokenize(const std::string _source,
             Language,
             0,
             false,
-            _noSpellCorrector,
+            _useSpellCorrector,
             QList<enuTextTags::Type>(),
             QList<stuIXMLReplacement>()
             ),
