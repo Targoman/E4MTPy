@@ -14,7 +14,7 @@ BOOST_PYTHON = $$system(ldconfig -p | grep boost_python3 | head -n 1 | sed s/.*l
 isEmpty(BOOST_PYTHON){
 BOOST_PYTHON = $$system(ldconfig -p | grep boost_python-py3 | head -n 1 | sed s/.*lib// | sed s/.so.*//)
 }
-LIBS += -l$${BOOST_PYTHON}
+LIBS += -l$${BOOST_PYTHON} -lTargomanCommon -lTargomanTextProcessor
 
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-
 QT+= core network

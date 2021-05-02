@@ -51,13 +51,13 @@ std::string c_tokenize(
                 bool _arabicPunctuations=true,
                 bool _breakSentences=false);
 std::string c_normalize(
-    const std::string _source,
-    const std::string _language);
+    const std::string _source
+    );
 
 BOOST_PYTHON_FUNCTION_OVERLOADS(c_ixml2Text_overloads, c_ixml2Text, 1, 5)
 BOOST_PYTHON_FUNCTION_OVERLOADS(c_text2IXML_overloads, c_text2IXML, 2, 3)
 BOOST_PYTHON_FUNCTION_OVERLOADS(c_tokenize_overloads, c_tokenize, 2, 6)
-BOOST_PYTHON_MODULE(libe4mtpy)
+BOOST_PYTHON_MODULE(libE4MTPy)
 {
     def("init", c_init);
     def("normalize", c_normalize);
@@ -175,13 +175,12 @@ std::string c_tokenize(const std::string _source,
     return Result.toStdString();
 }
 
-std::string c_normalize(const std::string _source, const std::string _language) {
+std::string c_normalize(const std::string _source) {
     QString Source = QString::fromUtf8(_source.data());
-    QString Language = QString::fromUtf8(_language.data());
     bool SpellCorrected = false;
     QString Result = TargomanTextProcessor::instance().normalizeText(
         Source,
         SpellCorrected,
-        Language);
+        "");
     return Result.toStdString();
 }

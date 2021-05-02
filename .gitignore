@@ -40,3 +40,9 @@ out
 Makefile
 *.pro.user
 *.stash
+
+# Wheel
+whl/E4MTPyPackage/build/
+whl/E4MTPyPackage/dist/
+whl/E4MTPyPackage/src/
+*.whl
