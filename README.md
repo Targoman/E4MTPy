@@ -2,14 +2,23 @@
 Python wrapper for [E4MT](https://github.com/Targoman/E4MT)
 
 ## Requirements
-E4MTPy needs Python >= 3, and Python3-pip.
+E4MTPy needs Python >= 3, Python3-pip, Qt5, libxml and libz.
 ## Installation
 #### Using prepared wheels
-We provided pip wheels for different versions of two linux distros (Ubuntu20.04, Ubuntu18.04, Opensuse/leap15.3, Opensuse/leap15.2 and Opensuse/leap15.1). They can be downloaded from [here]().
-After downloading, simply install it via pip like below:
-```bash
-pip3 install E4MTPy-0.1.0-cp38-cp38-linux_x86_64.whl
-```
+1. Install Qt5, libxml and libz. 
+    Assuming a fresh Ubuntu:20.04 installation, following command does the job:
+    ```bash
+    apt update && apt install -y libqt5core5a libqt5network5 libxml2-dev zlib1g-dev python3-pip
+    ```
+    or if you've installed Opensuse/leap:15, following command can be used:
+    ```bash
+    zypper install -y libxml2-devel zlib-devel libQt5Core-devel libQt5Network-devel python3-pip
+    ```
+2. We provided pip wheels for different versions of two linux distros (Ubuntu20.04, Ubuntu18.04, Opensuse/leap15.3, and Opensuse/leap15.2). They    can be downloaded from [here]().
+   After downloading, simply install it via pip like below:
+   ```bash
+   pip3 install E4MTPy-0.1.0-cp38-cp38-linux_x86_64.whl
+   ```
 #### Making your own wheel
 
 1. Clone a fresh copy from github:
