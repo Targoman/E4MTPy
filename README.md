@@ -14,10 +14,10 @@ E4MTPy needs Python >= 3, Python3-pip, Qt5, libxml and libz.
     ```bash
     zypper install -y libxml2-devel zlib-devel libQt5Core-devel libQt5Network-devel python3-pip
     ```
-2. We provided pip wheels for different versions of two linux distros (Ubuntu20.04, Ubuntu18.04, Opensuse/leap15.3, and Opensuse/leap15.2). They    can be downloaded from [here]().
+2. We provided pip wheels for different versions of two linux distros ([Ubuntu20.04](https://github.com/Targoman/E4MTPy/releases/download/v0.1.0/Ubuntu20.04-E4MTPy-0.1.0-cp38-cp38-linux_x86_64.whl), [Ubuntu18.04](https://github.com/Targoman/E4MTPy/releases/download/v0.1.0/Ubuntu18.4-E4MTPy-0.1.0-cp36-cp36m-linux_x86_64.whl), [Opensuse/leap15.3](https://github.com/Targoman/E4MTPy/releases/download/v0.1.0/Opensuse15.3-E4MTPy-0.1.0-cp36-cp36m-linux_x86_64.whl), and [Opensuse/leap15.2](https://github.com/Targoman/E4MTPy/releases/download/v0.1.0/Opensuse15.2-E4MTPy-0.1.0-cp36-cp36m-linux_x86_64.whl)).
    After downloading, simply install it via pip like below:
    ```bash
-   pip3 install E4MTPy-0.1.0-cp38-cp38-linux_x86_64.whl
+   pip3 install Opensuse15.2-E4MTPy-0.1.0-cp36-cp36m-linux_x86_64.whl
    ```
 #### Making your own wheel
 
